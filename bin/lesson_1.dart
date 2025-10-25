@@ -59,7 +59,7 @@ void main() {
   ''';
   print(multiLineString);
 
-  // Операции со строками
+  // Строковые функции
   String sampleString = "  Hello Dart!  ";
   print(sampleString.length); // Длина строки
   print(sampleString.toUpperCase()); // Преобразование в верхний регистр
@@ -67,30 +67,6 @@ void main() {
   print(sampleString.trim()); // Удаление пробелов в начале и конце
   print(sampleString.contains("Dart")); // Проверка наличия подстроки
   print(sampleString.replaceAll("Dart", "Flutter")); // Замена подстроки
-
-  // Преобразование типов
-  String ageString = "30";
-  int ageInt = int.parse(ageString); // Преобразование строки в целое число
-  print(ageInt + 5);
-
-  double heightDouble = 1.85;
-  String heightString = heightDouble
-      .toString(); // Преобразование числа с плавающей точкой в строку
-  print("Height: " + heightString);
-
-  /*String helloString = "Hello";
-  int helloInt = int.parse(
-    helloString,
-  ); // Ошибка: Невозможно преобразовать строку в число
-  */
-
-  int number = 9;
-  double numberDouble = number
-      .toDouble(); // Преобразование целого числа в число с плавающей точкой
-  double digit = 9.99;
-  int digitint = digit
-      .toInt(); // Преобразование числа с плавающей точкой в целое число
-  print('$number, $numberDouble, $digit, $digitint');
 
   // Арифметические операторы
   print(1 + 4); // Сложение
@@ -111,12 +87,41 @@ void main() {
   print(++x); // Префиксный
   print(x);
 
-  // Операторы сравнения
-  int y = 15;
-  print(x == y); // Равно
-  print(x != y); // Не равно
-  print(x > y); // Больше
-  print(x < y); // Меньше
-  print(x >= y); // Больше или равно
-  print(x <= y); // Меньше или равно
+  // Особенности системы типов Dart (var, final, const, dynamic)
+
+  // Автоматическое определение типа с помощью ключевого слова 'var'
+  var myVariable =
+      'Hello, Dart!'; // Тип данных определяется автоматически -> String
+  print(myVariable.toUpperCase());
+
+  var number = 42; // Тип данных определяется автоматически -> int
+  print(number + 8);
+  // number = 'Five'; // Ошибка: Нельзя присвоить значение другого типа
+
+  final String finalString = 'This is a final string.';
+  // finalString = 'Trying to change'; // Ошибка: Нельзя изменить значение final - оно константно после инициализации
+
+  final pi = 3.14; // Тип данных определяется автоматически -> double
+
+  // Предпочтительнее использовать final чем var, если значение не будет изменяться
+
+  const phrase =
+      'Wellcome to Dart course!'; // Значение константы известно на этапе компиляции, но не в runtime
+  // phrase = 'Trying to change'; // Ошибка: Нельзя изменить значение const
+  final upperPhrase = phrase
+      .toUpperCase(); // Можно использовать методы для final
+
+  const a = 1;
+  const b = 2;
+  const sum = a + b; // Можно выполнять операции с const
+
+  dynamic variable = 'I am dynamic'; // Тип данных может изменяться
+  print(variable);
+  variable = 100; // Теперь это int
+  print(variable);
+
+  // var -> значение может изменяться и тип определяется автоматически
+  // final -> значение не может изменяться после инициализации, тип можно указать
+  // const -> значение не может изменяться и должно быть известно на этапе компиляции
+  // dynamic -> значение и тип могут изменяться в процессе выполнения программы
 }

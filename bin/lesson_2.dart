@@ -1,43 +1,16 @@
 import 'dart:io';
 
 void main() {
-  // Особенности системы типов Dart (var, final, const, dynamic)
+  // Операторы сравнения
 
-  // Вывод типа данных переменной с помощью ключевого слова 'var'
-  var myVariable =
-      'Hello, Dart!'; // Тип данных определяется автоматически -> String
-  print(myVariable.toUpperCase());
-
-  var number = 42; // Тип данных определяется автоматически -> int
-  print(number + 8);
-  // number = 'Five'; // Ошибка: Нельзя присвоить значение другого типа
-
-  final String finalString = 'This is a final string.';
-  // finalString = 'Trying to change'; // Ошибка: Нельзя изменить значение final - оно константно после инициализации
-
-  final pi = 3.14; // Тип данных определяется автоматически -> double
-
-  // Предпочтительнее использовать final чем var, если значение не будет изменяться
-
-  const phrase =
-      'Wellcome to Dart course!'; // Значение константы известно на этапе компиляции, но не в runtime
-  // phrase = 'Trying to change'; // Ошибка: Нельзя изменить значение const
-  final upperPhrase = phrase
-      .toUpperCase(); // Можно использовать методы для final
-
-  const x = 1;
-  const y = 2;
-  const sum = x + y; // Можно выполнять операции с const
-
-  dynamic variable = 'I am dynamic'; // Тип данных может изменяться
-  print(variable);
-  variable = 100; // Теперь это int
-  print(variable);
-
-  // var -> значение может изменяться и тип определяется автоматически
-  // final -> значение не может изменяться после инициализации, тип можно указать
-  // const -> значение не может изменяться и должно быть известно на этапе компиляции
-  // dynamic -> значение и тип могут изменяться в процессе выполнения программы
+  int x = 10;
+  int y = 15;
+  print(x == y); // Равно
+  print(x != y); // Не равно
+  print(x > y); // Больше
+  print(x < y); // Меньше
+  print(x >= y); // Больше или равно
+  print(x <= y); // Меньше или равно
 
   // Условные конструкции if, if-else, if - else-if - else
 
@@ -140,21 +113,39 @@ void main() {
     }
   }
 
-  // Тернарная условная конструкция
-  temperature = 18;
-  // Условие ? значение_если_истина : значение_если_ложь
-  String weatherMessage = (temperature > 20)
-      ? 'It\'s warm outside.'
-      : 'It\'s cool outside.';
-  print(weatherMessage);
+  // Преобразование типов
+  String ageString = "30";
+  int ageInt = int.parse(ageString); // Преобразование строки в целое число
+  print(ageInt + 5);
+
+  double heightDouble = 1.85;
+  String heightString = heightDouble
+      .toString(); // Преобразование числа с плавающей точкой в строку
+  print("Height: " + heightString);
+
+  /*String helloString = "Hello";
+  int helloInt = int.parse(
+    helloString,
+  ); // Ошибка: Невозможно преобразовать строку в число
+  */
+
+  int number = 9;
+  double numberDouble = number
+      .toDouble(); // Преобразование целого числа в число с плавающей точкой
+  double digit = 9.99;
+  int digitint = digit
+      .toInt(); // Преобразование числа с плавающей точкой в целое число
+  print('$number, $numberDouble, $digit, $digitint');
 
   // Ввод информации из консоли (stdin)
 
+  print('Enter Number 1:');
+  final int num1 = int.parse(stdin.readLineSync()!);
+  print('Enter Number 2:');
+  final int num2 = int.parse(stdin.readLineSync()!);
   print('Enter a sign: +, -, *, or /:');
   // Запуск программы необходимо сделать из консоли, чтобы можно было ввести данные -> dart run bin/lesson_2.dart
   final String sign = stdin.readLineSync()!;
-  const num1 = 10;
-  const num2 = 5;
 
   // Режим отладки
   // Условная конструкция switch
@@ -174,6 +165,4 @@ void main() {
     default:
       print('Invalid sign entered.');
   }
-
-  // Знакомство с GIT (init, add, commit, push)
 }
