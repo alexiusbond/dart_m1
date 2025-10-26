@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable, prefer_interpolation_to_compose_strings
+
 // Введение, знакомство с IDE VS code
 //(Форматирование кода Shift+Alt+F, Shift + Alt + ↓ — дублировать строку вниз, запуск программы)
 
@@ -119,6 +121,10 @@ void main() {
   print(variable);
   variable = 100; // Теперь это int
   print(variable);
+
+  // null safety (безопасность от null)
+  String? city; //
+  print(city); // Ошибка: переменная не инициализирована
 
   // var -> значение может изменяться и тип определяется автоматически
   // final -> значение не может изменяться после инициализации, тип можно указать

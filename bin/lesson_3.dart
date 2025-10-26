@@ -19,7 +19,7 @@ void main() {
   }
 
   // таблица умножения числа 9 в обратном порядке только на четные числа
-  print('------------- Multiplication Table 9 DESC -------------');
+  print('------------- Multiplication Table 9 DESC for Even Numbers -------------');
   number = 9;
   for (var i = 10; i >= 1; i -= 2) {
     print('$number x $i = ${number * i}');

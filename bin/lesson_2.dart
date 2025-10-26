@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'dart:io';
 
 void main() {
@@ -121,7 +123,7 @@ void main() {
   double heightDouble = 1.85;
   String heightString = heightDouble
       .toString(); // Преобразование числа с плавающей точкой в строку
-  print("Height: " + heightString);
+  print("Height: $heightString");
 
   /*String helloString = "Hello";
   int helloInt = int.parse(
