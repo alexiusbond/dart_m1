@@ -1,10 +1,3 @@
-// Функции базовое понимание: без параметров, с параметрами, возвращаемые и невозвращаемые
-// Именованные параметры функций
-// Область видимости переменных
-// Анонимные функции
-// Знакомство с GIT (init, add, commit, push)
-// Контрольная работа
-
 void main() {
   // Функции базовое понимание
 
@@ -59,7 +52,13 @@ void main() {
     print('Number: $squared');
   });
 
-  numbers.forEach((n) => print('Number doubled: ${n * 2}')); // Однострочная анонимная функция (стрелочная, =>)
+  numbers.forEach(
+    (n) => print('Number doubled: ${n * 2}'),
+  ); // Однострочная анонимная функция (стрелочная, =>)
+
+  // Знакомство с GIT (init, add, commit, push)
+
+  // Контрольная работа
 }
 
 void makeTea() {
@@ -109,4 +108,4 @@ void scopeExample(int paramVariable) {
   // print(blockVariable); // Ошибка: blockVariable не видна здесь
 }
 
-// 
+//
