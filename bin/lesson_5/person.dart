@@ -1,4 +1,4 @@
-import 'package:dart_m1/bank_account.dart';
+import 'bank_account.dart';
 
 class Person {
   final String _name;

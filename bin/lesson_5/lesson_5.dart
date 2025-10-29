@@ -1,13 +1,5 @@
-// Классы и объекты
-// Поля, Конструкторы, Методы
-// Ключевое слово this
-// Именованные конструкторы
-// Инкапсуляция
-// Композиция (Composition)
-// Повторение комманд GIT
-
-import 'package:dart_m1/bank_account.dart';
-import 'package:dart_m1/person.dart';
+import 'bank_account.dart';
+import 'person.dart';
 
 void main() {
   // Создание объекта с использованием основного конструктора
@@ -39,8 +31,8 @@ void main() {
     name: 'Bob',
     age: 25,
     bankAccount: BankAccount.withInitialDeposit('112233', 3000.0),
-  );    
-    me.displayInfo();
-    print('Bank Account Info for ${me.name}:');
-    me.bankAccount!.displayInfo();
+  );
+  me.displayInfo();
+  print('Bank Account Info for ${me.name}:');
+  me.bankAccount!.displayInfo();
 }

@@ -25,6 +25,6 @@ class BankAccount {
 
   // Метод для отображения информации о счете
   void displayInfo() {
-    print(['Account Number: $_accountNumber, Balance: $_balance']);
+    print('Account Number: $_accountNumber, Balance: $_balance');
   }
 }
