@@ -2,6 +2,11 @@ class BankAccount {
   final String _accountNumber;
   double _balance;
 
+  // Альтернативный способ объявления конструктора
+  // BankAccount(balance) {
+  //   this.balance = balance;
+  // }
+
   // Конструктор
   BankAccount(this._accountNumber) : _balance = 0.0;
 
