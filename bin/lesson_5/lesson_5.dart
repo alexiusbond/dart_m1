@@ -1,18 +1,20 @@
-import 'bank_account.dart';
+import 'car.dart';
 import 'person.dart';
 
 void main() {
   // Создание объекта с использованием основного конструктора
-  BankAccount account1 = BankAccount('123456');
-  account1.displayInfo();
-  account1.deposit(500.0);
-  account1.withdraw(200.0);
-  account1.displayInfo();
-  account1.withdraw(2000.0); // Попытка снять больше, чем есть на счете
+  Car myCar = Car('Blue', 'Toyota', 2020);
+  print(myCar);
+  myCar.displayInfo();
+  // myCar.color = 'Green'; // Прямое изменение свойства color
+  myCar.repaint('Green'); // Изменение цвета через метод
+  myCar.drive();
 
   // Создание объекта с использованием именованного конструктора
-  final account2 = BankAccount.withInitialDeposit('654321', 1500.0);
-  account2.displayInfo();
+  final friendsCar = Car.red('Honda', 2018);
+  friendsCar.displayInfo();
+  friendsCar.honk(3);
+  friendsCar.drive();
 
   // Создание объекта Person
   Person myFriend = Person(name: 'Alice', age: 30);
@@ -21,18 +23,12 @@ void main() {
   myFriend.displayInfo();
   // myFriend.wasBorn(); // Ошибка: метод недоступен из-за инкапсуляции
 
-  // Связывание банковского счета с человеком
-  myFriend.bankAccount = account2;
-  print('Bank Account Info for ${myFriend.name}:');
-  myFriend.bankAccount!.displayInfo();
+  // Связывание машины с владельцем
+  friendsCar.owner = myFriend;
+  print('Owner of friendsCar: ${friendsCar.owner?.name}');
 
-  // Создание объекта Person с банковским счетом через именованный конструктор
-  Person me = Person.withBankAccount(
-    name: 'Bob',
-    age: 25,
-    bankAccount: BankAccount.withInitialDeposit('112233', 3000.0),
-  );
-  me.displayInfo();
-  print('Bank Account Info for ${me.name}:');
-  me.bankAccount!.displayInfo();
+
+  // Создание объекта с использованием именованного конструктора с владельцем
+  Car dadsCar = Car.withOwner('Black', 'Ford', 2015, Person(name: 'Bob', age: 45));
+  dadsCar.displayInfo();
 }

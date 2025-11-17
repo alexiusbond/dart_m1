@@ -1,23 +1,9 @@
-import 'bank_account.dart';
-
 class Person {
   final String _name;
   int _age;
-  BankAccount? _bankAccount;
 
   // Конструктор
   Person({required String name, required int age}) : _name = name, _age = age {
-    _wasBorn();
-  }
-
-  // Именованный конструктор с банковским счетом
-  Person.withBankAccount({
-    required String name,
-    required int age,
-    required BankAccount bankAccount,
-  }) : _name = name,
-       _age = age,
-       _bankAccount = bankAccount {
     _wasBorn();
   }
 
@@ -48,13 +34,5 @@ class Person {
   // Метод для отображения информации о человеке
   void displayInfo() {
     print('Name: $_name, Age: $_age, Year of Birth: ${calculateYearOfBirth()}');
-  }
-
-  set bankAccount(BankAccount account) {
-    _bankAccount = account;
-  }
-
-  BankAccount? get bankAccount {
-    return _bankAccount;
   }
 }
