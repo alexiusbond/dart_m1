@@ -11,7 +11,7 @@ void main() {
   myCar.drive();
 
   // Создание объекта с использованием именованного конструктора
-  final friendsCar = Car.red('Honda', 2018);
+  final friendsCar = Car.redHonda(2018);
   friendsCar.displayInfo();
   friendsCar.honk(3);
   friendsCar.drive();

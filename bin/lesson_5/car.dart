@@ -22,8 +22,8 @@ class Car {
   // Конструктор с параметрами, присваивающимися напрямую
   Car(this.color, this.model, this.year);
 
-  // Именованные конструкторы
-  Car.red(this.model, this.year) : color = 'Red';
+  // Именованные конструкторы, c инициализирующим списком
+  Car.redHonda(this.year) : color = 'Red', model = 'Honda';
   Car.withOwner(this.color, this.model, this.year, this.owner);
 
   // Метод для вождения машины

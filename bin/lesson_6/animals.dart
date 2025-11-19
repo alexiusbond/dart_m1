@@ -1,5 +1,3 @@
-enum Color { brown, black, white }
-
 class Animal {
   static int _animalCount = 0;
 
@@ -24,13 +22,7 @@ class Animal {
   }
 }
 
-class Parrot extends Animal {
-  Parrot(String name, int age) : super(name, age);
-
-  void fly() {
-    print('$name is flying!');
-  }
-}
+enum Color { brown, black, white }
 
 class Cat extends Animal {
   Color color;
@@ -45,6 +37,14 @@ class Cat extends Animal {
 
   void meow() {
     print('$name says Meow!');
+  }
+}
+
+class Parrot extends Animal {
+  Parrot(super.name, super.age);
+
+  void fly() {
+    print('$name is flying!');
   }
 }
 
