@@ -4,7 +4,7 @@ import 'mixins.dart';
 // Можно наследовать.
 // Можно содержать готовые методы.
 // Может иметь абстрактные методы, которые наследник обязан реализовать.
-abstract class Animal implements Drawable, Playable {
+abstract class Animal implements Drawable {
   String name;
   int age;
 
@@ -17,7 +17,7 @@ abstract class Animal implements Drawable, Playable {
   void makeSound();
 }
 
-class Cat extends Animal with Jump {
+class Cat extends Animal with Jump implements Playable {
   Cat(super.name, super.age);
 
   @override
@@ -41,7 +41,34 @@ class Cat extends Animal with Jump {
   }
 }
 
-class Parrot extends Animal with Fly, Jump {
+abstract class Reptile extends Animal {
+  Reptile(super.name, super.age);
+
+  void crawl() {
+    print('$name is crawling.');
+  }
+}
+
+class Snake extends Reptile {
+  Snake(super.name, super.age);
+
+  @override
+  void makeSound() {
+    print('$name hisses!');
+  }
+
+  @override
+  void draw() {
+    print('🐍');
+  }
+
+  @override
+  String draw3D(String material) {
+    return '3D Snake made of $material';
+  }
+}
+
+class Parrot extends Animal with Fly, Jump implements Playable {
   Parrot(super.name, super.age);
 
   @override

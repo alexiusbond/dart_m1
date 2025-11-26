@@ -9,6 +9,7 @@ void main() {
     Parrot('Polly', 3),
     Car(),
     Plane(),
+    Snake('Kaa', 8),
   ];
 
   for (var drawable in drawables) {
